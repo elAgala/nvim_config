@@ -1,7 +1,7 @@
 return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-  { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "EdenEast/nightfox.nvim" },
 
   -- Configure LazyVim to load gruvbox
@@ -39,6 +39,7 @@ return {
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   { import = "lazyvim.plugins.extras.lang.typescript" },
+  { import = "lazyvim.plugins.extras.dap.core" },
 
   -- add more treesitter parsers
   {
