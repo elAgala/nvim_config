@@ -14,6 +14,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Add Dart commentstring
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dart",
+  callback = function()
+    vim.opt_local.commentstring = "// %s"
+  end,
+})
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -26,6 +34,7 @@ require("lazy").setup({
 
     -- import/override with your plugins
     { import = "plugins" },
+    { import = "plugins.lsp" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
